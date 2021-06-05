@@ -19,6 +19,15 @@ class ClienteApi(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
 
+@api_view(['GET'])
+def cliente_detail_view(request,pk=None):
+	if request.method == 'GET':
+		cliente = Cliente.objects.filter(rut=pk).first()
+		if cliente == None:
+			return Response("No existe cliente.")
+		else:
+			cliente_serializer= ClienteSerializer(cliente)
+			return Response(cliente_serializer.data)
 '''
 class ProductoApi(viewsets.ModelViewSet):
     serializer_class = ProductoSerializer
