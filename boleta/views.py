@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Boleta, Cliente, Producto
 from .serializers import BoletaSerializer, ProductoSerializer, ClienteSerializer
 from rest_framework import viewsets
+from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 # Create your views here.
