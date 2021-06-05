@@ -13,5 +13,5 @@ router.register("Cliente",views.ClienteApi, basename="cliente")
 
 urlpatterns = [
     path('',include(router.urls)),
-    path('cliente/<int:pk>/', cliente_detail_view, name= "cliente_api"),
+    path('cl/<int:pk>/', cliente_detail_view, name= "cliente_api"),
 ]
