@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.urls import path, re_path, include
 from . import views
+from boleta.views import (
+	cliente_detail_view,
+	)
 from rest_framework.routers import DefaultRouter
 
 router=DefaultRouter()
