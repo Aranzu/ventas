@@ -6,7 +6,6 @@ from django.utils import timezone
 class Producto(models.Model):
     nombre_pro = models.CharField(max_length=100, primary_key=True)
     precio = models.IntegerField()
-    stock = models.IntegerField()
 
     def __str__(self):
         return self.nombre_pro
