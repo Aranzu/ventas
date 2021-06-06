@@ -57,7 +57,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://18.207.25.202",
-    "18.207.25.202"
+    "18.207.25.202",
+    "http://127.0.0.1:8000/",
 ]
 
 ROOT_URLCONF = 'ventas.urls'
