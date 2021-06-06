@@ -5,7 +5,7 @@ from .models import Producto, Cliente, Boleta
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Producto
-        fields = ['nombre_pro','precio','stock']
+        fields = ['nombre_pro','precio']
 
 class BoletaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,6 +16,6 @@ class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
         fields = ['rut','nombre_cl','direccion','boletas']
-        depth = 1
+        depth = 2
 
 
