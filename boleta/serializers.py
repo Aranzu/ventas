@@ -11,6 +11,7 @@ class BoletaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Boleta
         fields = ['num_boleta','created_at','total','productos']
+        depth = 1
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
