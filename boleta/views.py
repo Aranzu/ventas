@@ -30,6 +30,16 @@ def cliente_detail_view(request,pk=None):
 		else:
 			cliente_serializer= ClienteSerializer(cliente)
 			return Response(cliente_serializer.data)
+
+@api_view(['GET'])
+def boleta_detail_view(request,pk=None):
+	if request.method == 'GET':
+		boleta = Boleta.objects.filter(num_boleta=pk).first()
+		if boleta == None:
+			return Response("No existe la boleta ingresada.")
+		else:
+			boleta_serializer= BoletaSerializer(boleta)
+			return Response(boleta_serializer.data)
 '''
 class ProductoApi(viewsets.ModelViewSet):
     serializer_class = ProductoSerializer
