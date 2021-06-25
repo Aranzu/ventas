@@ -5,17 +5,15 @@ from .models import Producto, Cliente, Boleta, ItemProducto
 # Serializers define the API representation.
 
 class ItemProductoSerializer(serializers.ModelSerializer):
-    total = serializers.IntegerField()
     class Meta:
         model = ItemProducto
-        fields = ("id_item",'cantidad','total','total_prov')
+        fields = ("id_item",'cantidad')
         depth = 2
 
 class BoletaSerializer(serializers.ModelSerializer):
-    total = serializers.IntegerField()
     class Meta:
         model = Boleta
-        fields = ('num_boleta','created_at','ItemProductos','total')
+        fields = ('num_boleta','created_at','ItemProductos')
         depth = 3
 
 class ClienteSerializer(serializers.ModelSerializer):
