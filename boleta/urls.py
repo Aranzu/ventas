@@ -10,6 +10,7 @@ router=DefaultRouter()
 router.register("Boleta",views.BoletaApi, basename="boleta")
 router.register("Producto",views.ProductoApi, basename="producto")
 router.register("Cliente",views.ClienteApi, basename="cliente")
+router.register("Item",views.ItemProductoApi, basename="Item")
 
 urlpatterns = [
     path('',include(router.urls)),
