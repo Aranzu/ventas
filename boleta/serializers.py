@@ -1,16 +1,13 @@
 from rest_framework import serializers
 from django.db.models import Sum, Avg
 from .models import Producto, Cliente, Boleta, ItemProducto
-from django.db.models import Sum
-from django.db.models import Count
 
 # Serializers define the API representation.
 
 class ItemProductoSerializer(serializers.ModelSerializer):
-    total_item = serializers.IntegerField()
     class Meta:
         model = ItemProducto
-        fields = ("id_item",'cantidad','total_item')
+        fields = ("id_item",'cantidad')
         depth = 2
 
 class BoletaSerializer(serializers.ModelSerializer):
