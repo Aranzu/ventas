@@ -15,6 +15,7 @@ class Producto(models.Model):
 class Boleta(models.Model):
     num_boleta = models.IntegerField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    total = models.IntegerField()
     ItemProductos = models.ManyToManyField('ItemProducto', related_name='ItemProductos', blank=True)
 
 class ItemProducto(models.Model):
