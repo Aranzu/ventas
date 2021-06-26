@@ -7,8 +7,6 @@ from rest_framework.decorators import api_view
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.db.models import Sum
-from django.db.models import Count
 # ViewSets define the view behavior.
 
 class ProductoApi(viewsets.ModelViewSet):
@@ -29,11 +27,6 @@ class ItemProductoApi(viewsets.ModelViewSet):
     permission_classes = ()
     queryset = ItemProducto.objects.all()
     serializer_class = ItemProductoSerializer
-
-    def get_queryset(self):
-        return ItemProducto.objects.annotate(
-            total_item = (Sum('productos__precio') * Sum('cantidad'))
-        )
 
 @api_view(['GET'])
 def cliente_detail_view(request,pk=None):
