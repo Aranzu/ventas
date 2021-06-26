@@ -27,7 +27,12 @@ class ItemProductoApi(viewsets.ModelViewSet):
     permission_classes = ()
     queryset = ItemProducto.objects.all()
     serializer_class = ItemProductoSerializer
-
+'''
+    def get_queryset(self):
+        return ItemProducto.objects.annotate(
+            total_item = (Sum('productos__precio') * Sum('cantidad'))
+        )
+'''
 @api_view(['GET'])
 def cliente_detail_view(request,pk=None):
 	if request.method == 'GET':
