@@ -8,6 +8,9 @@ class Producto(models.Model):
     id_prod = models.IntegerField(primary_key=True)
     nombre_pro = models.CharField(max_length=100)
     precio = models.IntegerField()
+    
+    def __str__(self):
+        return self.nombre_pro    
 
 class Boleta(models.Model):
     num_boleta = models.IntegerField(primary_key=True)
