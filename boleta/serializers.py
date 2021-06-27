@@ -13,7 +13,7 @@ class ClienteSerializer(serializers.ModelSerializer):
 class BoletaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Boleta
-        fields = ('num_boleta','created_at','itemProductos')
+        fields = ('num_boleta','created_at','total','itemProductos')
         depth = 3
 
 class ItemProductoSerializer(serializers.ModelSerializer):
